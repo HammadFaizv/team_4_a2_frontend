@@ -17,7 +17,7 @@ Read [backend/README.md](backend/README.md) for the **backend change log**, conf
 ## Demo video and submission details
 
 - **Demo/Explanation video:** [Watch on Loom](https://www.loom.com/share/29dae4076e494f89960410f80dce5632)
-- **Last git commit hash:** `<LAST_GIT_COMMIT_HASH>` <!-- placeholder: replace with the output of `git rev-parse HEAD` before submission -->
+- **Last git commit hash:** `83e2a8f138c7aada48d9eeccb7bff25ae392ff48`
 
 ## Screenshots
 
