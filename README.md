@@ -190,3 +190,16 @@ The unfiltered platform facet scans all reviews by definition; selective worker 
 Audit: [docs/requirements_audit.md](docs/requirements_audit.md). Evidence: [backend/reports/scale-audit.json](backend/reports/scale-audit.json), [backend/reports/e2e-live.json](backend/reports/e2e-live.json). Wireframes (one SVG board per screen in `docs/design/`): [design system](docs/design/00_design_system.svg), [browse](docs/design/02_browse_contracts.svg), [fund a gig](docs/design/06_fund_gig.svg), [audit](docs/design/08_escrow_audit.svg), [analytics](docs/design/09_freelancer_analytics.svg), [nearby map](docs/design/10_nearby_workers.svg), [reviews](docs/design/12_reviews_portfolios.svg), [phone screens](docs/design/11_mobile_screens.svg).
 
 Still needed for submission: actual team contribution details, verified assigned-fork/history, final team repository URL/commit hash, and the linked ≤5-minute demo video. Docker Compose and clean-machine setup remain unverified. Location pings naturally expire after two hours; regenerate scale data when fresh count/performance proof is needed.
+
+## Team contributions
+
+Derived from the git history of this repository (Assignment 2 work, 15 Oct 2026, all branches). Commit counts include merge commits and combine each person's author identities.
+
+| Member | GitHub / commit identity | Commits | Contribution |
+| --- | --- | ---: | --- |
+| Hammad Faizvi | HammadFaizv, Hammad Faizvi | 9 | Backend/frontend repository restructure; PostgreSQL/MongoDB HTTP API, migrations, seeds, tests, Docker setup and scale-audit reports; API endpoint docs and browser smoke test; reviewed and merged pull requests #1–#3; final README, demo video link and commit hash |
+| Mihir Bachhav | mihir bachhav | 3 | Frontend nearby-workers map, reviews/portfolios page, styling, Dockerfile and frontend server; handover note; newest-first contract sorting and Docker bootstrap script |
+| Mihir Pradhan (`mihirbuddy`) | mihirbuddy | 1 | Funding, escrow audit and analytics pages; shared API client, events, state and storage modules |
+| K Charan Simha Reddy | K Charan Simha reddy | 1 | Browse, worker/client/contract details, actor switcher, router and navigation layout; `docs/app_flow.md` |
+
+Reproduce the counts with `git shortlog -sne --all`.
