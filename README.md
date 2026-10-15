@@ -2,6 +2,8 @@
 
 GigTask now has **separate frontend and backend folders**. The default API connects to the inherited GigTask PostgreSQL and MongoDB databases. Local/cloud database hosts are selected through environment variables, with no application-code changes.
 
+## Github Repo: [https://github.com/HammadFaizv/team_4_a2_frontend]
+
 ```text
 frontend/                    browser UI + independent static server
 backend/
