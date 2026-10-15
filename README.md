@@ -14,6 +14,35 @@ backend/
 
 Read [backend/README.md](backend/README.md) for the **backend change log**, configuration, transaction decisions and test details. The assignment PDFs and the flow DOCX are kept as references.
 
+## Demo video and submission details
+
+- **Demo/Explanation video:** [Watch on Loom](https://www.loom.com/share/29dae4076e494f89960410f80dce5632)
+- **Last git commit hash:** `<LAST_GIT_COMMIT_HASH>` <!-- placeholder: replace with the output of `git rev-parse HEAD` before submission -->
+
+## Screenshots
+
+Captured against the assignment-scale dataset (1,000 clients, 2,000 freelancers, 60,000 contracts). Files are in [docs/screenshots/](docs/screenshots/).
+
+### Fund a gig
+![Fund a gig](docs/screenshots/WhatsApp%20Image%202026-10-15%20at%2021.47.59.jpeg)
+
+### Browse contracts
+![Browse contracts with status badges](docs/screenshots/WhatsApp%20Image%202026-10-15%20at%2021.48.01%20%281%29.jpeg)
+
+### Escrow audit
+![Escrow audit log with signed changes and running balance](docs/screenshots/WhatsApp%20Image%202026-10-15%20at%2021.48.01%20%282%29.jpeg)
+
+### Freelancer analytics
+![Freelancer analytics with seven-day average and lifetime summary](docs/screenshots/WhatsApp%20Image%202026-10-15%20at%2021.48.00.jpeg)
+
+![Freelancer analytics with dense ranking table](docs/screenshots/WhatsApp%20Image%202026-10-15%20at%2021.48.01.jpeg)
+
+### Reviews & portfolios
+![Portfolio, rating distribution, skill tags and reviews](docs/screenshots/WhatsApp%20Image%202026-10-15%20at%2021.48.00%20%281%29.jpeg)
+
+### Nearby workers map
+![Nearby workers map with numbered markers](docs/screenshots/WhatsApp%20Image%202026-10-15%20at%2021.48.00%20%282%29.jpeg)
+
 ## Local setup
 
 Requires Node.js 22.13+, PostgreSQL 16+ and MongoDB 7+. Create an empty PostgreSQL database named `gigtask_db` using your database account, then from this project root:
