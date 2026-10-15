@@ -42,12 +42,12 @@ export function createAPI({pool,mongo}){
     if(entity==='contracts'&&q.get('clientId')){const id=integer(q.get('clientId'));ownClient(a,id);add('client_id=?',id);}
     if(entity==='freelancers'&&q.get('workedWith')==='true'){if(a.role!=='client')fail(403,'Work history filtering is for the selected client.');add("EXISTS (SELECT 1 FROM contracts history WHERE history.freelancer_id=freelancers.id AND history.client_id=? AND history.status IN ('IN_PROGRESS','COMPLETED'))",a.id);}
     if(entity==='freelancers'&&q.get('available')==='true')where+=' AND is_available=true';
-    return paginated(entity,where,args,q,entity==='freelancers'?worker:numeric,'id',entity==='contracts'?'contracts.*,(SELECT name FROM clients WHERE clients.id=contracts.client_id) client_name,(SELECT name FROM freelancers WHERE freelancers.id=contracts.freelancer_id) freelancer_name':'*');
+    return paginated(entity,where,args,q,entity==='freelancers'?worker:numeric,entity==='contracts'||entity==='clients'?'created_at DESC,id DESC':'id',entity==='contracts'?'contracts.*,(SELECT name FROM clients WHERE clients.id=contracts.client_id) client_name,(SELECT name FROM freelancers WHERE freelancers.id=contracts.freelancer_id) freelancer_name':'*');
    }
    const match=path.match(new RegExp(`^/api/${entity}/(\\d+)$`));if(match){const id=integer(match[1]);if(entity==='clients')ownClient(a,id);if(entity==='freelancers')ownWorker(a,id);const r=await record(entity,id);if(entity==='contracts')ownedContract(a,r);return {data:entity==='freelancers'?worker(r):numeric(r)};}
   }
   let match=path.match(/^\/api\/clients\/(\d+)\/audit$/);
-  if(match){const id=integer(match[1]);ownClient(a,id);await record('clients',id);dates(q);let where='client_id=$1';const args=[id];if(q.get('from')){args.push(q.get('from'));where+=` AND timestamp >= $${args.length}::date`;}if(q.get('to')){args.push(q.get('to'));where+=` AND timestamp < $${args.length}::date + INTERVAL '1 day'`;}return paginated('wallet_audit_logs',where,args,q,numeric,'timestamp,id');}
+  if(match){const id=integer(match[1]);ownClient(a,id);await record('clients',id);dates(q);let where='client_id=$1';const args=[id];if(q.get('from')){args.push(q.get('from'));where+=` AND timestamp >= $${args.length}::date`;}if(q.get('to')){args.push(q.get('to'));where+=` AND timestamp < $${args.length}::date + INTERVAL '1 day'`;}return paginated('wallet_audit_logs',where,args,q,numeric,'timestamp DESC,id DESC');}
   match=path.match(/^\/api\/freelancers\/(\d+)\/portfolio$/);
   if(match){const id=integer(match[1]);ownWorker(a,id);await record('freelancers',id);return {data:await mongo.collection('Portfolios').findOne(freelancerFilter(id))};}
   if(path==='/api/analytics/lifetime-earnings'){

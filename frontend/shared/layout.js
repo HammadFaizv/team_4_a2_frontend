@@ -47,7 +47,7 @@ export async function stats(ticket) {
         $("#stats").innerHTML = entries
             .map(
                 ([key, value]) =>
-                    `<div class="stat"><small>${esc(key === "balance" ? "Available demo balance" : key)}</small><strong>${key === "balance" ? money(value) : value}</strong><span class="hint">${session.actor.role === "admin" ? "Platform overview" : "Current actor context"}</span></div>`,
+                    `<div class="stat"><small>${esc(key === "balance" ? "Available demo balance" : key)}</small><strong>${key === "balance" ? money(value) : value}</strong>${session.actor.role === "admin" ? '<span class="hint">Platform overview</span>' : ""}</div>`,
             )
             .join("");
     } catch (error) {
