@@ -19,7 +19,7 @@ Read [backend/README.md](backend/README.md) for the **backend change log**, conf
 ## Demo video and submission details
 
 - **Demo/Explanation video:** [Watch on Loom](https://www.loom.com/share/29dae4076e494f89960410f80dce5632)
-- **Last git commit hash:** `83e2a8f138c7aada48d9eeccb7bff25ae392ff48`
+- **Last git commit hash:** `94741cc6881a915038edafff0e0c5b1d258da67f`
 
 ## Screenshots
 
